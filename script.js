@@ -28,7 +28,7 @@ navegacaoTab();
 function iniciaAccordion () {
   const listaFaq = document.querySelectorAll('.js-accordion dt');
   const classeAtivo = 'ativo'
-  
+
   if (listaFaq) {
     listaFaq[0].classList.add(classeAtivo);
     listaFaq[0].nextElementSibling.classList.add(classeAtivo);
@@ -43,3 +43,25 @@ function iniciaAccordion () {
 }
 
 iniciaAccordion();
+
+//*Scroll suave
+
+function iniciaScrollSuave () {
+
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+  
+  function scroll (event) {
+    event.preventDefault();
+    const href = event.target.getAttribute('href');
+    const section = document.querySelector(href);
+    
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+  
+  linksInternos.forEach((link) => addEventListener('click', scroll));
+}
+
+iniciaScrollSuave();
