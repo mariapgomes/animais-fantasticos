@@ -1,8 +1,8 @@
 //*Cria a navegação por Tab
 
 function navegacaoTab () {
-  const tabMenu = document.querySelectorAll('.js-tab-menu li');
-  const tabConteudo = document.querySelectorAll('.js-tab-conteudo section');
+  const tabMenu = document.querySelectorAll('[data-tab="menu"]  li');
+  const tabConteudo = document.querySelectorAll('[data-tab="conteudo"] section');
   
   if (tabMenu.length && tabConteudo.length) {
     tabConteudo[0].classList.add('ativo');
@@ -27,7 +27,7 @@ navegacaoTab();
 //*Cria accordion list
 
 function iniciaAccordion () {
-  const listaFaq = document.querySelectorAll('.js-accordion dt');
+  const listaFaq = document.querySelectorAll('[data-anime="accordion"] dt');
   const classeAtivo = 'ativo'
 
   if (listaFaq) {
@@ -49,7 +49,7 @@ iniciaAccordion();
 
 function iniciaScrollSuave () {
 
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+  const linksInternos = document.querySelectorAll('[data-menu="suave"] a[href^="#"]');
   
   function scroll (event) {
     event.preventDefault();
@@ -69,7 +69,7 @@ iniciaScrollSuave();
 
 //*Animação ao scroll
 
-const sections = document.querySelectorAll('.js-scroll');
+const sections = document.querySelectorAll('[data-anime="scroll"]');
 
 function iniciaAnimacaoScroll () {
   if (sections.length) {
