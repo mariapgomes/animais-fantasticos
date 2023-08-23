@@ -10,7 +10,8 @@ function navegacaoTab () {
       tabConteudo.forEach((section) => {
         section.classList.remove('ativo');
       })
-      tabConteudo[index].classList.add('ativo');
+      const direcao = tabConteudo[index].dataset.anime;
+      tabConteudo[index].classList.add('ativo', direcao);
     }
   
     tabMenu.forEach((itemMenu, index) => {
