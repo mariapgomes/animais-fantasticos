@@ -5,6 +5,7 @@ import iniciaAccordion from './modules/accordion.js';
 import iniciaModal from './modules/modal.js';
 import iniciaTooltip from './modules/tooltip.js';
 import iniciaMenuDropdown from './modules/menu-dropdown.js';
+import iniciaMenuMobile from './modules/menu-mobile.js';
 
 iniciaScrollSuave();
 iniciaAnimacaoScroll();
@@ -13,3 +14,4 @@ iniciaAccordion();
 iniciaModal();
 iniciaTooltip();
 iniciaMenuDropdown();
+iniciaMenuMobile();
