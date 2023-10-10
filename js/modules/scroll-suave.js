@@ -13,5 +13,5 @@ export default function iniciaScrollSuave () {
     })
   }
   
-  linksInternos.forEach((link) => addEventListener('click', scroll));
+  linksInternos.forEach((link) => link.addEventListener('click', scroll));
 }
