@@ -2,13 +2,18 @@ import iniciaAnimacaoNumeros from './anima-numeros.js';
 
 export default function iniciaBuscaAnimais() {
   async function buscaAnimais(url) {
-    const resposta = await fetch(url),
-          respostaJSON = await resposta.json();
-  
-    respostaJSON.forEach(animal => {
-      criaAnimal(animal)
-    });
-    iniciaAnimacaoNumeros();
+    try {
+      const resposta = await fetch(url),
+            respostaJSON = await resposta.json();
+    
+      respostaJSON.forEach(animal => {
+        criaAnimal(animal)
+      });
+      iniciaAnimacaoNumeros();
+      
+    } catch (error) {
+      console.log(error.message)
+    }
   }
   
   function criaAnimal(animal) {
