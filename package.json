@@ -1,0 +1,16 @@
+{
+  "name": "animais-fantasticos",
+  "version": "1.0.0",
+  "description": "Projeto proposto pelo curso de JavaScript Completo ES6 da instituição de ensino Origamid. Consiste em um site fictício que fala sobre características de alguns animais. A estrutura HTML e o CSS vem pronto pois o foco do curso é a implementação do JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.0"
+  }
+}

@@ -1,22 +1,22 @@
 export default function detectaClickFora(element, events, callback) {
-  const html = document.documentElement,
-        jaAtivo = 'data-ativo';
-
-  if(!element.hasAttribute(jaAtivo)) {
-    events.forEach(event => {
-      setTimeout(() => html.addEventListener(event, clickFora));
-    })
-    element.setAttribute(jaAtivo, '');
-  }
+  const html = document.documentElement;
+  const jaAtivo = 'data-ativo';
 
   function clickFora(event) {
-    if(!element.contains(event.target)) {
+    if (!element.contains(event.target)) {
       element.removeAttribute(jaAtivo);
 
-      events.forEach(event => {
-        html.removeEventListener(event, clickFora);
-      })
+      events.forEach((evento) => {
+        html.removeEventListener(evento, clickFora);
+      });
       callback();
     }
+  }
+
+  if (!element.hasAttribute(jaAtivo)) {
+    events.forEach((event) => {
+      setTimeout(() => html.addEventListener(event, clickFora));
+    });
+    element.setAttribute(jaAtivo, '');
   }
 }
