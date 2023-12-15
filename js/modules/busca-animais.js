@@ -24,5 +24,5 @@ export default function iniciaBuscaAnimais() {
     }
   }
 
-  buscaAnimais('http://127.0.0.1:5500/animais.json');
+  buscaAnimais('./animais.json');
 }
