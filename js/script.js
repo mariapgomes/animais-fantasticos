@@ -3,7 +3,7 @@ import iniciaAnimacaoScroll from './modules/scroll-animacao.js';
 import NavegacaoTab from './modules/navegacao-tab.js';
 import Accordion from './modules/accordion.js';
 import Modal from './modules/modal.js';
-import iniciaTooltip from './modules/tooltip.js';
+import Tooltip from './modules/tooltip.js';
 import iniciaMenuDropdown from './modules/menu-dropdown.js';
 import iniciaMenuMobile from './modules/menu-mobile.js';
 import iniciaFuncionamento from './modules/horario-funcionamento.js';
@@ -24,7 +24,9 @@ accordion.iniciaClasse();
 const modal = new Modal('[data-modal="abrir"]', '[data-modal="fechar"]', '[data-modal="container"]');
 modal.iniciaClasse();
 
-iniciaTooltip();
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.iniciaClasse();
+
 iniciaMenuDropdown();
 iniciaMenuMobile();
 iniciaBuscaAnimais();
