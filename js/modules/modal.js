@@ -32,7 +32,7 @@ export default class Modal {
 
   iniciaClasse() {
     if (this.btnAbrir && this.btnFechar && this.containerModal) {
-      this.eventoToggleModal();
+      this.adicionaEvento();
     }
     return this;
   }
