@@ -18,5 +18,6 @@ export default class Accordion {
       this.toogleAccordion(this.listaFaq[0]);
       this.adicionaEvento();
     }
+    return this;
   }
 }

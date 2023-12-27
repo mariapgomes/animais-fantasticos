@@ -24,5 +24,6 @@ export default class NavegacaoTab {
       this.tabConteudo[0].classList.add(this.classeAtivo);
       this.adicionaEvento();
     }
+    return this;
   }
 }
