@@ -1,4 +1,4 @@
-import iniciaAnimacaoNumeros from './anima-numeros.js';
+import AnimacaoNumeros from './anima-numeros.js';
 
 export default function iniciaBuscaAnimais() {
   function criaAnimal(animal) {
@@ -18,7 +18,8 @@ export default function iniciaBuscaAnimais() {
       respostaJSON.forEach((animal) => {
         criaAnimal(animal);
       });
-      iniciaAnimacaoNumeros();
+      const animacaoNumeros = new AnimacaoNumeros('[data-numero]', '.numeros', 'ativo');
+      animacaoNumeros.iniciaClasse();
     } catch (error) {
       console.log(error.message);
     }
