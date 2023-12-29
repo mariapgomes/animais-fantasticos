@@ -1,5 +1,5 @@
 import ScrollSuave from './modules/scroll-suave.js';
-import iniciaAnimacaoScroll from './modules/scroll-animacao.js';
+import AnimacaoScroll from './modules/scroll-animacao.js';
 import NavegacaoTab from './modules/navegacao-tab.js';
 import Accordion from './modules/accordion.js';
 import Modal from './modules/modal.js';
@@ -13,7 +13,8 @@ import buscaBitcoin from './modules/busca-bitcoin.js';
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.iniciaClasse();
 
-iniciaAnimacaoScroll();
+const animacaoScroll = new AnimacaoScroll('[data-anime="scroll"]', 'ativo');
+animacaoScroll.iniciaClasse();
 
 const navegacaoTab = new NavegacaoTab('[data-tab="menu"]  li', '[data-tab="conteudo"] section');
 navegacaoTab.iniciaClasse();
