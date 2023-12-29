@@ -1,10 +1,12 @@
+import debounce from './debounce.js';
+
 export default class AnimacaoScroll {
   constructor(section, classe) {
     this.sections = document.querySelectorAll(section);
     this.inicioAnimacao = window.innerHeight * 0.7;
     this.classe = classe;
 
-    this.checaDistancia = this.checaDistancia.bind(this);
+    this.checaDistancia = debounce(this.checaDistancia.bind(this), 50);
   }
 
   pegaDistanciaTop() {
