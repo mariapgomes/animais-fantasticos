@@ -4,7 +4,7 @@ import NavegacaoTab from './modules/navegacao-tab.js';
 import Accordion from './modules/accordion.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
-import iniciaMenuDropdown from './modules/menu-dropdown.js';
+import MenuDropdown from './modules/menu-dropdown.js';
 import iniciaMenuMobile from './modules/menu-mobile.js';
 import iniciaFuncionamento from './modules/horario-funcionamento.js';
 import criaAnimais from './modules/busca-animais.js';
@@ -28,7 +28,9 @@ modal.iniciaClasse();
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.iniciaClasse();
 
-iniciaMenuDropdown();
+const menuDropdown = new MenuDropdown('[data-dropdown]', 'ativo');
+menuDropdown.iniciaClasse();
+
 iniciaMenuMobile();
 
 criaAnimais('./animais.json', '.numeros-grid');
