@@ -1,21 +1,39 @@
 import detectaClickFora from './detecta-click-fora.js';
 
-export default function iniciaMenuMobile() {
-  const menuButton = document.querySelector('[data-menu="button"]');
-  const menuList = document.querySelector('[data-menu="list"]');
-  const eventos = ['click', 'touchstart'];
+export default class MenuMobile {
+  constructor(menuButton, menuList, classe, eventos) {
+    this.menuButton = document.querySelector(menuButton);
+    this.menuList = document.querySelector(menuList);
+    this.classeAtiva = classe;
 
-  function abreMenu() {
-    menuList.classList.add('ativo');
-    menuButton.classList.add('ativo');
+    this.abreMenu = this.abreMenu.bind(this);
 
-    detectaClickFora(menuList, eventos, () => {
-      menuList.classList.remove('ativo');
-      menuButton.classList.remove('ativo');
+    // Define argumento padrão caso não especificado
+    if (eventos === undefined) {
+      this.eventos = ['touchstart', 'click'];
+    } else {
+      this.eventos = eventos;
+    }
+  }
+
+  abreMenu() {
+    this.menuList.classList.add(this.classeAtiva);
+    this.menuButton.classList.add(this.classeAtiva);
+
+    detectaClickFora(this.menuList, this.eventos, () => {
+      this.menuList.classList.remove(this.classeAtiva);
+      this.menuButton.classList.remove(this.classeAtiva);
     });
   }
 
-  if (menuButton) {
-    eventos.forEach((evento) => menuButton.addEventListener(evento, abreMenu));
+  adicionaEvento() {
+    this.eventos.forEach((evento) => this.menuButton.addEventListener(evento, this.abreMenu));
+  }
+
+  iniciaClasse() {
+    if (this.menuButton && this.menuList) {
+      this.adicionaEvento();
+    }
+    return this;
   }
 }

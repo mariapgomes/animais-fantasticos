@@ -5,7 +5,7 @@ import Accordion from './modules/accordion.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import MenuDropdown from './modules/menu-dropdown.js';
-import iniciaMenuMobile from './modules/menu-mobile.js';
+import MenuMobile from './modules/menu-mobile.js';
 import iniciaFuncionamento from './modules/horario-funcionamento.js';
 import criaAnimais from './modules/busca-animais.js';
 import buscaBitcoin from './modules/busca-bitcoin.js';
@@ -31,7 +31,8 @@ tooltip.iniciaClasse();
 const menuDropdown = new MenuDropdown('[data-dropdown]', 'ativo');
 menuDropdown.iniciaClasse();
 
-iniciaMenuMobile();
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]', 'ativo');
+menuMobile.iniciaClasse();
 
 criaAnimais('./animais.json', '.numeros-grid');
 
