@@ -1,20 +1,42 @@
 import detectaClickFora from './detecta-click-fora.js';
 
-export default function iniciaMenuDopdown() {
-  const menusDropdown = document.querySelectorAll('[data-dropdown]');
+export default class MenuDopdown {
+  constructor(menu, classe, eventos) {
+    this.menusDropdown = document.querySelectorAll(menu);
+    this.classeAtiva = classe;
 
-  function ativaMenuDropdown(event) {
+    this.ativaMenuDropdown = this.ativaMenuDropdown.bind(this);
+
+    // Define argumento padrão caso não especificado
+    if (eventos === undefined) {
+      this.eventos = ['touchstart', 'click'];
+    } else {
+      this.eventos = eventos;
+    }
+  }
+
+  ativaMenuDropdown(event) {
     event.preventDefault();
-    this.classList.add('ativo');
+    const elementoClicado = event.currentTarget;
+    elementoClicado.classList.add(this.classeAtiva);
 
-    detectaClickFora(this, ['touchstart', 'click'], () => {
-      this.classList.remove('ativo');
+    detectaClickFora(elementoClicado, this.eventos, () => {
+      elementoClicado.classList.remove(this.classeAtiva);
     });
   }
 
-  menusDropdown.forEach((menu) => {
-    ['touchstart', 'click'].forEach((tiposDeEvento) => {
-      menu.addEventListener(tiposDeEvento, ativaMenuDropdown);
+  adicionaEvento() {
+    this.menusDropdown.forEach((menu) => {
+      this.eventos.forEach((tiposDeEvento) => {
+        menu.addEventListener(tiposDeEvento, this.ativaMenuDropdown);
+      });
     });
-  });
+  }
+
+  iniciaClasse() {
+    if (this.menusDropdown.length) {
+      this.adicionaEvento();
+    }
+    return this;
+  }
 }
