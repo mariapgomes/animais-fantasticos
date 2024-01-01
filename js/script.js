@@ -6,7 +6,7 @@ import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import MenuDropdown from './modules/menu-dropdown.js';
 import MenuMobile from './modules/menu-mobile.js';
-import iniciaFuncionamento from './modules/horario-funcionamento.js';
+import Funcionamento from './modules/horario-funcionamento.js';
 import criaAnimais from './modules/busca-animais.js';
 import buscaBitcoin from './modules/busca-bitcoin.js';
 
@@ -36,5 +36,7 @@ menuMobile.iniciaClasse();
 
 criaAnimais('./animais.json', '.numeros-grid');
 
-iniciaFuncionamento();
+const funcionamento = new Funcionamento('[data-semana]', 'aberto');
+funcionamento.iniciaClasse();
+
 buscaBitcoin('https://www.blockchain.com/pt/ticker', '.btc-preco');
