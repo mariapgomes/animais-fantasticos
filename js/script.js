@@ -9,6 +9,7 @@ import MenuMobile from './modules/menu-mobile.js';
 import Funcionamento from './modules/horario-funcionamento.js';
 import criaAnimais from './modules/busca-animais.js';
 import buscaBitcoin from './modules/busca-bitcoin.js';
+import NavegacaoSlide from './modules/slide/navegacao.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.iniciaClasse();
@@ -40,3 +41,7 @@ const funcionamento = new Funcionamento('[data-semana]', 'aberto');
 funcionamento.iniciaClasse();
 
 buscaBitcoin('https://www.blockchain.com/pt/ticker', '.btc-preco');
+
+const slide = new NavegacaoSlide('.slide', '.slide-container', 'ativo');
+slide.iniciaClasse();
+slide.adicionaControle('.controles-customizados');
