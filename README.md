@@ -5,6 +5,8 @@ Projeto proposto pelo curso de JavaScript Completo ES6 da instituição de ensin
 Consiste em um site fictício que fala sobre características de alguns animais.
 A estrutura HTML e o CSS vem pronto pois o foco do curso é a implementação do JavaScript
 
+Para conferir o projeto clique [aqui](https://animais-fantasticos-mg.netlify.app/).
+
 
 ## Demonstração
 
